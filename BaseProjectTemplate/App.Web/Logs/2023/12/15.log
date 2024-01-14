@@ -1,0 +1,191 @@
+2023-12-15 19:58:57.745  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 19:58:57.891  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 19:58:57.892  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 19:59:08.296  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET / => 200 
+2023-12-15 20:00:28.297  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 20:00:28.351  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 20:00:28.355  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 20:00:34.935  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET / => 200 
+2023-12-15 20:16:19.604  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 20:16:19.654  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 20:16:19.656  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 20:16:25.920  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET / => 200 
+2023-12-15 20:16:37.354  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET /Account/Logout => 302 
+2023-12-15 20:16:37.693  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET /login => 200 
+2023-12-15 20:16:40.764 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__ToLower_0 varchar(200) = 'admin';
+
+SELECT [a].[Avatar], [a].[BlockedBy], [a].[BlockedTo], [a].[Email], [a].[FullName], [a].[Id], [a].[PasswordHash], [a].[PhoneNumber1], CASE
+    WHEN [a0].[Id] IS NULL THEN N''
+    ELSE [a0].[Name]
+END, [a].[Username], [a0].[Id], [a1].[MstPermissionId], [a1].[Id]
+FROM [AppUser] AS [a]
+LEFT JOIN [AppRole] AS [a0] ON [a].[AppRoleId] = [a0].[Id]
+LEFT JOIN [AppRolePermission] AS [a1] ON [a0].[Id] = [a1].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Username] = @__ToLower_0)
+ORDER BY [a].[Id], [a0].[Id], [a1].[Id] 
+2023-12-15 20:16:41.762  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; POST /login => 302 
+2023-12-15 20:16:41.805  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-15 20:16:47.895  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [30]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2023-12-15 20:16:47.924 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.? [?]: An unhandled exception has occurred while executing the request. System.InvalidOperationException: No database provider has been configured for this DbContext. A provider can be configured by overriding the 'DbContext.OnConfiguring' method or by using 'AddDbContext' on the application service provider. If 'AddDbContext' is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Collections.Generic.IEnumerable<TEntity>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at App.Web.Controllers.CategoryController.Index() in C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web\Controllers\CategoryController.cs:line 26
+   at lambda_method152(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at App.Web.WebConfig.Middlewares.AppLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web\WebConfig\Middlewares\AppLoggingMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+2023-12-15 20:18:47.414  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 20:18:47.453  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 20:18:47.457  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 20:18:47.640  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [30]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2023-12-15 20:18:47.669 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.? [?]: An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at App.Web.Controllers.CategoryController.Index() in C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web\Controllers\CategoryController.cs:line 28
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at App.Web.WebConfig.Middlewares.AppLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web\WebConfig\Middlewares\AppLoggingMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+2023-12-15 20:19:47.144  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 20:19:47.280  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 20:19:47.295  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 20:19:56.722  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-15 20:19:59.929  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /file-manager => 200 
+2023-12-15 20:20:01.747  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /file-manager/connector => 200 
+2023-12-15 20:20:03.441 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-15 20:20:04.326  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2023-12-15 20:20:05.111  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-15 20:20:47.279  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2023-12-15 20:34:21.849  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 20:34:21.925  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 20:34:21.927  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 20:34:30.428  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category/Index => 200 
+2023-12-15 20:38:49.310  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 20:38:49.359  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 20:38:49.361  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 20:38:56.693  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category/Index => 200 
+2023-12-15 20:39:27.340  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 20:39:27.383  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 20:39:27.385  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 20:39:34.691  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category/Index => 200 
+2023-12-15 20:40:02.475  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 20:40:02.526  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 20:40:02.527  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 20:40:09.258  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category/Index => 200 
+2023-12-15 20:46:10.187  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 20:46:10.529  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 20:46:10.785  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 20:46:30.788  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-15 20:46:42.658  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /sendmail/index => 200 
+2023-12-15 20:48:09.134  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 20:48:09.185  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 20:48:09.188  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 20:48:15.888  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-15 20:48:23.757  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /sendmail/index => 200 
+2023-12-15 20:49:30.485  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 20:49:30.540  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 20:49:30.543  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 20:49:37.467  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-15 20:49:42.642  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /sendmail/index => 200 
+2023-12-15 20:51:43.417  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 20:51:43.510  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 20:51:43.512  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 20:51:58.594  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /SendMail/Index => 200 
+2023-12-15 20:55:33.948  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 20:55:34.015  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 20:55:34.016  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 20:55:40.185  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /SendMail/Index => 200 
+2023-12-15 21:10:11.799  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 21:10:11.856  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 21:10:11.857  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 21:10:18.734  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /SendMail/Index => 200 
+2023-12-15 21:11:02.876  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 21:11:02.923  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 21:11:02.926  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 21:11:11.762  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /SendMail/Index => 200 
+2023-12-15 21:11:42.484  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 21:11:42.526  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 21:11:42.528  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 21:11:52.083  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /SendMail/Index => 200 
+2023-12-15 21:15:43.503  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 21:15:43.553  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 21:15:43.554  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 21:15:50.468  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /SendMail/Index => 200 
+2023-12-15 21:18:07.252  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 21:18:07.306  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 21:18:07.309  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 21:18:14.096  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /SendMail/Index => 200 
+2023-12-15 21:18:34.179  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; POST /SendMail/Index => 302 
+2023-12-15 21:18:34.253  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /SendMail => 200 
+2023-12-15 21:20:29.524  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; POST /SendMail => 302 
+2023-12-15 21:20:29.561  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /SendMail => 200 
+2023-12-15 21:22:14.154  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 21:22:14.216  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 21:22:14.218  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 21:22:21.231  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-15 21:22:21.231  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /sendmail/index => 200 
+2023-12-15 21:22:37.947  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; POST /sendmail/index => 302 
+2023-12-15 21:22:38.020  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /SendMail => 200 
+2023-12-15 21:23:41.982  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 21:23:42.015  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 21:23:42.019  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 21:23:47.929  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-15 21:23:47.929  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /sendmail/index => 200 
+2023-12-15 21:23:57.998  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; POST /sendmail/index => 302 
+2023-12-15 21:23:58.071  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /SendMail => 200 
+2023-12-15 21:24:36.284  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-15 21:24:36.332  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-15 21:24:36.333  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-15 21:24:42.030  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-15 21:24:42.030  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /sendmail/index => 200 
+2023-12-15 21:24:50.758  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; POST /sendmail/index => 302 
+2023-12-15 21:24:50.793  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /SendMail => 200 

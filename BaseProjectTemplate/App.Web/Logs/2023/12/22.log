@@ -1,0 +1,35 @@
+2023-12-22 20:10:44.306  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-22 20:10:44.701  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-22 20:10:44.702  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-22 20:10:50.579  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET /login => 200 
+2023-12-22 20:10:53.289  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET / => 200 
+2023-12-22 20:10:55.954 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__ToLower_0 varchar(200) = 'admin';
+
+SELECT [a].[Avatar], [a].[BlockedBy], [a].[BlockedTo], [a].[Email], [a].[FullName], [a].[Id], [a].[PasswordHash], [a].[PhoneNumber1], CASE
+    WHEN [a0].[Id] IS NULL THEN N''
+    ELSE [a0].[Name]
+END, [a].[Username], [a0].[Id], [a1].[MstPermissionId], [a1].[Id]
+FROM [AppUser] AS [a]
+LEFT JOIN [AppRole] AS [a0] ON [a].[AppRoleId] = [a0].[Id]
+LEFT JOIN [AppRolePermission] AS [a1] ON [a0].[Id] = [a1].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Username] = @__ToLower_0)
+ORDER BY [a].[Id], [a0].[Id], [a1].[Id] 
+2023-12-22 20:10:56.630  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; POST /login => 302 
+2023-12-22 20:10:56.667  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-22 20:10:59.404  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2023-12-22 20:49:38.337  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-22 20:49:38.378  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-22 20:49:38.380  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-22 20:49:44.338  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-22 20:50:38.572  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-22 20:50:38.608  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-22 20:50:38.613  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-22 20:50:44.619  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-22 21:00:20.844  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-22 21:00:20.881  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-22 21:00:20.883  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-22 21:00:26.435  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-22 21:02:40.038  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-22 21:02:40.090  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-22 21:02:40.094  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-22 21:02:45.987  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 

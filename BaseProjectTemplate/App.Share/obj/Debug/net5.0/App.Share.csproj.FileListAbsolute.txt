@@ -1,0 +1,12 @@
+C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Share\bin\Debug\net5.0\App.Share.deps.json
+C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Share\bin\Debug\net5.0\App.Share.dll
+C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Share\bin\Debug\net5.0\App.Share.pdb
+C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Share\obj\Debug\net5.0\App.Share.csproj.AssemblyReference.cache
+C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Share\obj\Debug\net5.0\App.Share.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Share\obj\Debug\net5.0\App.Share.AssemblyInfoInputs.cache
+C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Share\obj\Debug\net5.0\App.Share.AssemblyInfo.cs
+C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Share\obj\Debug\net5.0\App.Share.csproj.CoreCompileInputs.cache
+C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Share\obj\Debug\net5.0\App.Share.dll
+C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Share\obj\Debug\net5.0\refint\App.Share.dll
+C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Share\obj\Debug\net5.0\App.Share.pdb
+C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Share\obj\Debug\net5.0\ref\App.Share.dll

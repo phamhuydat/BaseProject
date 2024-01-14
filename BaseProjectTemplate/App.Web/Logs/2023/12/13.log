@@ -1,0 +1,447 @@
+2023-12-13 19:37:45.420  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-13 19:37:45.571  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-13 19:37:45.575  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-13 19:38:02.030  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET / => 200 
+2023-12-13 19:38:05.767  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET /Account/Logout => 302 
+2023-12-13 19:38:06.755  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET /login => 200 
+2023-12-13 19:38:11.019 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__ToLower_0 varchar(200) = 'admin';
+
+SELECT [a].[Avatar], [a].[BlockedBy], [a].[BlockedTo], [a].[Email], [a].[FullName], [a].[Id], [a].[PasswordHash], [a].[PhoneNumber1], CASE
+    WHEN [a0].[Id] IS NULL THEN N''
+    ELSE [a0].[Name]
+END, [a].[Username], [a0].[Id], [a1].[MstPermissionId], [a1].[Id]
+FROM [AppUser] AS [a]
+LEFT JOIN [AppRole] AS [a0] ON [a].[AppRoleId] = [a0].[Id]
+LEFT JOIN [AppRolePermission] AS [a1] ON [a0].[Id] = [a1].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Username] = @__ToLower_0)
+ORDER BY [a].[Id], [a0].[Id], [a1].[Id] 
+2023-12-13 19:38:12.550  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; POST /login => 302 
+2023-12-13 19:38:12.645  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-13 19:38:50.958 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__CurrentUsername_0 varchar(200) = 'admin';
+
+SELECT [a].[Id], [a].[Address], [a].[AppRoleId], [a].[Avatar], [a].[BlockedBy], [a].[BlockedTo], [a].[CreatedBy], [a].[CreatedDate], [a].[DeletedDate], [a].[DisplayOrder], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[PhoneNumber1], [a].[PhoneNumber2], [a].[UpdatedBy], [a].[UpdatedDate], [a].[Username]
+FROM [AppUser] AS [a]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Username] <> @__CurrentUsername_0)
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 19:38:51.656  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /User => 200 
+2023-12-13 19:40:15.022 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 19:40:15.356  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 19:40:19.473 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[Name], [a].[Desc], [a0].[MstPermissionId], [a0].[Id]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppRolePermission] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2023-12-13 19:40:19.744 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2023-12-13 19:40:20.210  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Edit/1 => 200 
+2023-12-13 19:41:35.807 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 19:41:35.834  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 19:41:40.384  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2023-12-13 19:41:41.941 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__CurrentUsername_0 varchar(200) = 'admin';
+
+SELECT [a].[Id], [a].[Address], [a].[AppRoleId], [a].[Avatar], [a].[BlockedBy], [a].[BlockedTo], [a].[CreatedBy], [a].[CreatedDate], [a].[DeletedDate], [a].[DisplayOrder], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[PhoneNumber1], [a].[PhoneNumber2], [a].[UpdatedBy], [a].[UpdatedDate], [a].[Username]
+FROM [AppUser] AS [a]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Username] <> @__CurrentUsername_0)
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 19:41:41.958  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /User => 200 
+2023-12-13 19:41:43.655 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 19:41:43.675  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 19:41:45.727 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2023-12-13 19:41:45.747  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Create => 200 
+2023-12-13 19:41:48.055 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 19:41:48.072  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 19:52:30.612  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-13 19:52:30.664  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-13 19:52:30.665  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-13 19:52:32.529 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 19:52:40.845  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 19:55:46.075  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-13 19:55:46.116  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-13 19:55:46.118  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-13 19:55:47.356 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 19:55:55.302  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 19:58:53.305  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-13 19:58:53.358  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-13 19:58:53.363  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-13 19:58:54.640  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [30]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 19:58:54.703 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.? [?]: An unhandled exception has occurred while executing the request. System.InvalidOperationException: The seed entity for entity type 'MstPermission' cannot be added because another seed entity with the same key value for {'Id'} has already been added. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateData(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Set[TEntity]()
+   at App.Data.Repositories.GenericRepository.GetAll[TEntity,TViewModel](MapperConfiguration mapperConfig, Boolean selectFromTrash, Expression`1 where) in C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Data\Repositories\GenericRepository.GetAll.cs:line 40
+   at App.Web.Controllers.RoleController.Index(Int32 page, Int32 size) in C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web\Controllers\RoleController.cs:line 31
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at App.Web.WebConfig.Middlewares.AppLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web\WebConfig\Middlewares\AppLoggingMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+2023-12-13 19:59:27.654  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-13 19:59:27.712  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-13 19:59:27.716  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-13 19:59:28.868  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [30]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 19:59:28.926 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.? [?]: An unhandled exception has occurred while executing the request. System.InvalidOperationException: The seed entity for entity type 'MstPermission' cannot be added because another seed entity with the same key value for {'Id'} has already been added. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateData(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Set[TEntity]()
+   at App.Data.Repositories.GenericRepository.GetAll[TEntity,TViewModel](MapperConfiguration mapperConfig, Boolean selectFromTrash, Expression`1 where) in C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Data\Repositories\GenericRepository.GetAll.cs:line 40
+   at App.Web.Controllers.RoleController.Index(Int32 page, Int32 size) in C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web\Controllers\RoleController.cs:line 31
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at App.Web.WebConfig.Middlewares.AppLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web\WebConfig\Middlewares\AppLoggingMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+2023-12-13 20:08:24.480  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-13 20:08:24.572  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-13 20:08:24.573  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-13 20:08:26.947 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 20:08:34.085  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 20:08:34.085  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-13 20:08:36.414 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 20:08:36.516  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 20:08:39.973 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[Name], [a].[Desc], [a0].[MstPermissionId], [a0].[Id]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppRolePermission] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2023-12-13 20:08:40.363 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2023-12-13 20:08:40.884  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Edit/1 => 200 
+2023-12-13 20:09:45.165  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-13 20:09:45.208  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-13 20:09:45.210  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-13 20:09:46.938 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[Name], [a].[Desc], [a0].[MstPermissionId], [a0].[Id]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppRolePermission] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2023-12-13 20:09:52.189 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2023-12-13 20:09:55.165  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Edit/1 => 200 
+2023-12-13 20:10:30.967  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-13 20:10:31.018  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-13 20:10:31.021  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-13 20:11:21.772  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-13 20:11:21.817  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-13 20:11:21.819  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-13 20:11:29.139  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-13 20:11:33.824 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 20:11:34.954  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 20:11:37.083 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[Name], [a].[Desc], [a0].[MstPermissionId], [a0].[Id]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppRolePermission] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2023-12-13 20:11:37.526 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2023-12-13 20:11:37.858  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Edit/1 => 200 
+2023-12-13 20:16:12.813  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2023-12-13 20:18:31.904  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-13 20:18:32.031  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-13 20:18:32.038  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-13 20:18:41.622  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-13 20:18:57.092  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 403 
+2023-12-13 20:18:57.503  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /error/403 => 403 
+2023-12-13 20:19:02.982 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 20:19:04.131  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 20:19:06.628 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[Name], [a].[Desc], [a0].[MstPermissionId], [a0].[Id]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppRolePermission] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2023-12-13 20:19:07.098 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2023-12-13 20:19:07.548  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Edit/1 => 200 
+2023-12-13 20:19:23.859  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 403 
+2023-12-13 20:19:23.890  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /error/403 => 403 
+2023-12-13 20:19:26.466 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 20:19:26.507  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 20:19:28.915 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[Name], [a].[Desc], [a0].[MstPermissionId], [a0].[Id]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppRolePermission] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2023-12-13 20:19:28.937 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2023-12-13 20:19:29.004  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Edit/1 => 200 
+2023-12-13 20:19:32.798 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[CreatedBy], [a].[CreatedDate], [a].[DeletedDate], [a].[Desc], [a].[DisplayOrder], [a].[Name], [a].[UpdatedBy], [a].[UpdatedDate]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0) 
+2023-12-13 20:19:32.832 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__role_Id_0 int = 1;
+
+SELECT [a].[Id], [a].[AppRoleId], [a].[CreatedBy], [a].[CreatedDate], [a].[DeletedDate], [a].[DisplayOrder], [a].[MstPermissionId], [a].[UpdatedBy], [a].[UpdatedDate]
+FROM [AppRolePermission] AS [a]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[AppRoleId] = @__role_Id_0)
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 20:19:33.931  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; POST /Role/Edit/1 => 302 
+2023-12-13 20:19:33.967 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 20:19:34.025  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 20:19:37.667  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 403 
+2023-12-13 20:19:37.688  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /error/403 => 403 
+2023-12-13 20:19:42.253  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 403 
+2023-12-13 20:19:42.289  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /error/403 => 403 
+2023-12-13 20:19:44.733 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 20:19:44.798  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 20:19:46.384 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name], [a].[UpdatedDate], [a0].[DeletedDate], [a0].[Id], [a0].[Username]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppUser] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2023-12-13 20:19:46.941 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Id], [a].[CreatedBy], [a].[CreatedDate], [a].[DeletedDate], [a].[Desc], [a].[DisplayOrder], [a].[Name], [a].[UpdatedBy], [a].[UpdatedDate]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] <> 1)
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 20:19:47.280  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Delete/1 => 200 
+2023-12-13 20:19:52.625 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[Name], [a].[Desc], [a0].[MstPermissionId], [a0].[Id]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppRolePermission] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2023-12-13 20:19:52.656 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2023-12-13 20:19:52.692  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Edit/1 => 200 
+2023-12-13 20:19:56.787  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 403 
+2023-12-13 20:19:56.870  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /error/403 => 403 
+2023-12-13 20:20:00.343 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 20:20:00.376  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 20:21:32.967  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-13 20:21:33.049  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-13 20:21:33.050  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-13 20:21:42.126  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-13 20:22:24.806  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 403 
+2023-12-13 20:22:25.043  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /error/403 => 403 
+2023-12-13 20:22:32.056 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 20:22:32.764  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 20:22:34.771 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[Name], [a].[Desc], [a0].[MstPermissionId], [a0].[Id]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppRolePermission] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2023-12-13 20:22:35.219 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2023-12-13 20:22:35.610  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Edit/1 => 200 
+2023-12-13 20:22:44.264  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Account/Logout => 302 
+2023-12-13 20:22:44.432  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET /login => 200 
+2023-12-13 20:22:45.922 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__ToLower_0 varchar(200) = 'admin';
+
+SELECT [a].[Avatar], [a].[BlockedBy], [a].[BlockedTo], [a].[Email], [a].[FullName], [a].[Id], [a].[PasswordHash], [a].[PhoneNumber1], CASE
+    WHEN [a0].[Id] IS NULL THEN N''
+    ELSE [a0].[Name]
+END, [a].[Username], [a0].[Id], [a1].[MstPermissionId], [a1].[Id]
+FROM [AppUser] AS [a]
+LEFT JOIN [AppRole] AS [a0] ON [a].[AppRoleId] = [a0].[Id]
+LEFT JOIN [AppRolePermission] AS [a1] ON [a0].[Id] = [a1].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Username] = @__ToLower_0)
+ORDER BY [a].[Id], [a0].[Id], [a1].[Id] 
+2023-12-13 20:22:46.235  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; POST /login => 302 
+2023-12-13 20:22:46.259  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2023-12-13 20:22:47.947  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2023-12-13 20:38:47.695 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2023-12-13 20:38:47.716  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2023-12-13 20:38:50.190 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[Name], [a].[Desc], [a0].[MstPermissionId], [a0].[Id]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppRolePermission] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2023-12-13 20:38:50.228 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2023-12-13 20:38:50.435  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Edit/1 => 200 
+2023-12-13 20:43:03.830  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2023-12-13 20:43:03.879  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2023-12-13 20:43:03.884  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2023-12-13 20:43:05.479 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[Name], [a].[Desc], [a0].[MstPermissionId], [a0].[Id]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppRolePermission] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2023-12-13 20:43:10.610 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2023-12-13 20:43:13.323  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Edit/1 => 200 

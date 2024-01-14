@@ -1,0 +1,280 @@
+2024-01-05 20:00:48.472  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2024-01-05 20:00:48.749  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2024-01-05 20:00:48.750  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2024-01-05 20:01:02.048  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET / => 200 
+2024-01-05 20:01:06.100  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET /Account/Logout => 302 
+2024-01-05 20:01:06.598  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET /login => 200 
+2024-01-05 20:01:10.862 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__ToLower_0 varchar(200) = 'admin';
+
+SELECT [a].[Avatar], [a].[BlockedBy], [a].[BlockedTo], [a].[Email], [a].[FullName], [a].[Id], [a].[PasswordHash], [a].[PhoneNumber1], CASE
+    WHEN [a0].[Id] IS NULL THEN N''
+    ELSE [a0].[Name]
+END, [a].[Username], [a0].[Id], [a1].[MstPermissionId], [a1].[Id]
+FROM [AppUser] AS [a]
+LEFT JOIN [AppRole] AS [a0] ON [a].[AppRoleId] = [a0].[Id]
+LEFT JOIN [AppRolePermission] AS [a1] ON [a0].[Id] = [a1].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Username] = @__ToLower_0)
+ORDER BY [a].[Id], [a0].[Id], [a1].[Id] 
+2024-01-05 20:01:12.048  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; POST /login => 302 
+2024-01-05 20:01:12.087  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2024-01-05 20:01:13.810 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 20:01:14.202  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 20:07:17.479  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2024-01-05 20:07:17.533  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2024-01-05 20:07:17.534  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2024-01-05 20:07:18.829 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 20:07:26.112  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 20:49:24.046  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2024-01-05 20:49:24.114  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2024-01-05 20:49:24.116  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2024-01-05 20:49:30.636  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2024-01-05 20:49:37.689 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 20:49:38.368  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 20:53:27.587  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2024-01-05 20:53:27.628  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2024-01-05 20:53:27.629  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2024-01-05 20:53:33.781  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2024-01-05 20:53:42.289 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 20:53:44.409  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2024-01-05 20:53:48.494 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[Name], [a].[Desc], [a0].[MstPermissionId], [a0].[Id]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppRolePermission] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2024-01-05 20:53:49.166 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2024-01-05 20:53:50.226  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Edit/1 => 200 
+2024-01-05 20:53:54.924 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 20:53:55.330  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 20:53:57.875  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category/Create => 200 
+2024-01-05 20:54:17.297  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; POST /Category/Create => 200 
+2024-01-05 20:54:19.915  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; POST /Category/Create => 200 
+2024-01-05 20:54:27.461 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 20:54:27.473  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 20:55:32.713  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category/Create => 200 
+2024-01-05 20:55:37.356 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 20:55:37.534  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 20:55:47.512  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category/Create => 200 
+2024-01-05 20:56:09.085  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; POST /Category/Create => 200 
+2024-01-05 20:56:11.359 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 20:56:11.372  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 20:56:19.571  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category/Create => 200 
+2024-01-05 20:57:46.081  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2024-01-05 20:57:46.125  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2024-01-05 20:57:46.126  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2024-01-05 20:57:52.554  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2024-01-05 20:57:56.836 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 20:57:57.313  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 20:58:02.452  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category/Create => 200 
+2024-01-05 20:58:15.298  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; POST /Category/Create => 302 
+2024-01-05 20:58:15.325 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 20:58:15.334  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 21:00:25.056  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2024-01-05 21:00:25.098  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2024-01-05 21:00:25.100  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2024-01-05 21:00:26.297 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:00:32.560  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 21:00:32.596  WARN Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.? [?]: Unable to configure browser refresh script injection on the response. Consider manually adding '<script src="/_framework/aspnetcore-browser-refresh.js"></script>' to the body of the page. 
+2024-01-05 21:00:35.785 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:00:36.206  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2024-01-05 21:00:38.143 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[Name], [a].[Desc], [a0].[MstPermissionId], [a0].[Id]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppRolePermission] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2024-01-05 21:00:38.438 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2024-01-05 21:00:38.762  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Edit/1 => 200 
+2024-01-05 21:01:18.203 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[CreatedBy], [a].[CreatedDate], [a].[DeletedDate], [a].[Desc], [a].[DisplayOrder], [a].[Name], [a].[UpdatedBy], [a].[UpdatedDate]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0) 
+2024-01-05 21:01:18.225 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__role_Id_0 int = 1;
+
+SELECT [a].[Id], [a].[AppRoleId], [a].[CreatedBy], [a].[CreatedDate], [a].[DeletedDate], [a].[DisplayOrder], [a].[MstPermissionId], [a].[UpdatedBy], [a].[UpdatedDate]
+FROM [AppRolePermission] AS [a]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[AppRoleId] = @__role_Id_0)
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:01:18.249 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DELETE AppRolePermission WHERE Id IN (15,16,17,18,19) 
+2024-01-05 21:01:18.524  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; POST /Role/Edit/1 => 302 
+2024-01-05 21:01:18.537 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:01:18.553  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2024-01-05 21:01:20.166  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Account/Logout => 302 
+2024-01-05 21:01:20.339  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET /login => 200 
+2024-01-05 21:01:21.586 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__ToLower_0 varchar(200) = 'admin';
+
+SELECT [a].[Avatar], [a].[BlockedBy], [a].[BlockedTo], [a].[Email], [a].[FullName], [a].[Id], [a].[PasswordHash], [a].[PhoneNumber1], CASE
+    WHEN [a0].[Id] IS NULL THEN N''
+    ELSE [a0].[Name]
+END, [a].[Username], [a0].[Id], [a1].[MstPermissionId], [a1].[Id]
+FROM [AppUser] AS [a]
+LEFT JOIN [AppRole] AS [a0] ON [a].[AppRoleId] = [a0].[Id]
+LEFT JOIN [AppRolePermission] AS [a1] ON [a0].[Id] = [a1].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Username] = @__ToLower_0)
+ORDER BY [a].[Id], [a0].[Id], [a1].[Id] 
+2024-01-05 21:01:21.862  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; POST /login => 302 
+2024-01-05 21:01:21.971  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2024-01-05 21:01:23.305  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 403 
+2024-01-05 21:01:23.443  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /error/403 => 403 
+2024-01-05 21:01:31.226 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:01:31.245  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2024-01-05 21:01:33.256 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[Name], [a].[Desc], [a0].[MstPermissionId], [a0].[Id]
+FROM [AppRole] AS [a]
+LEFT JOIN [AppRolePermission] AS [a0] ON [a].[Id] = [a0].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0)
+ORDER BY [a].[Id], [a0].[Id] 
+2024-01-05 21:01:33.270 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [m].[Id], [m].[Code], [m].[CreatedDate], [m].[DeletedDate], [m].[Desc], [m].[DisplayOrder], [m].[GroupName], [m].[Table]
+FROM [MstPermission] AS [m]
+WHERE [m].[DeletedDate] IS NULL
+ORDER BY [m].[DisplayOrder] DESC, [m].[Id] DESC 
+2024-01-05 21:01:33.287  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role/Edit/1 => 200 
+2024-01-05 21:01:38.221 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 1;
+
+SELECT [a].[Id], [a].[CreatedBy], [a].[CreatedDate], [a].[DeletedDate], [a].[Desc], [a].[DisplayOrder], [a].[Name], [a].[UpdatedBy], [a].[UpdatedDate]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0) 
+2024-01-05 21:01:38.225 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__role_Id_0 int = 1;
+
+SELECT [a].[Id], [a].[AppRoleId], [a].[CreatedBy], [a].[CreatedDate], [a].[DeletedDate], [a].[DisplayOrder], [a].[MstPermissionId], [a].[UpdatedBy], [a].[UpdatedDate]
+FROM [AppRolePermission] AS [a]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[AppRoleId] = @__role_Id_0)
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:01:38.467  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; POST /Role/Edit/1 => 302 
+2024-01-05 21:01:38.482 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[CreatedDate], [a].[Desc], [a].[Id], [a].[Name]
+FROM [AppRole] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:01:38.492  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Role => 200 
+2024-01-05 21:01:40.166  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /file-manager => 200 
+2024-01-05 21:01:41.489  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /file-manager/connector => 200 
+2024-01-05 21:01:42.466  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 403 
+2024-01-05 21:01:42.474  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /error/403 => 403 
+2024-01-05 21:01:44.393  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Account/Logout => 302 
+2024-01-05 21:01:44.453  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; GET /login => 200 
+2024-01-05 21:01:46.259 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__ToLower_0 varchar(200) = 'admin';
+
+SELECT [a].[Avatar], [a].[BlockedBy], [a].[BlockedTo], [a].[Email], [a].[FullName], [a].[Id], [a].[PasswordHash], [a].[PhoneNumber1], CASE
+    WHEN [a0].[Id] IS NULL THEN N''
+    ELSE [a0].[Name]
+END, [a].[Username], [a0].[Id], [a1].[MstPermissionId], [a1].[Id]
+FROM [AppUser] AS [a]
+LEFT JOIN [AppRole] AS [a0] ON [a].[AppRoleId] = [a0].[Id]
+LEFT JOIN [AppRolePermission] AS [a1] ON [a0].[Id] = [a1].[AppRoleId]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Username] = @__ToLower_0)
+ORDER BY [a].[Id], [a0].[Id], [a1].[Id] 
+2024-01-05 21:01:46.539  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: ANONYMOUS_USER; POST /login => 302 
+2024-01-05 21:01:46.562  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2024-01-05 21:01:47.709 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:01:47.723  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 21:01:55.994  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category/create => 403 
+2024-01-05 21:01:56.005  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /error/403 => 403 
+2024-01-05 21:12:57.589  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2024-01-05 21:12:57.644  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2024-01-05 21:12:57.646  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2024-01-05 21:13:04.259  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2024-01-05 21:17:40.179  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2024-01-05 21:17:40.214  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2024-01-05 21:17:40.216  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2024-01-05 21:17:46.293  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET / => 200 
+2024-01-05 21:17:52.075 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:17:52.765  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 21:18:10.461 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:18:10.481  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 21:18:41.736 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:18:42.070  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 21:18:44.207 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: DECLARE @__id_0 int = 7;
+
+SELECT [a].[Id], [a].[CreatedBy], [a].[CreatedDate], [a].[DeletedDate], [a].[Description], [a].[DisplayOrder], [a].[Name], [a].[UpdatedBy], [a].[UpdatedDate]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL AND ([a].[Id] = @__id_0) 
+2024-01-05 21:18:44.724  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category/Update/7 => 200 
+2024-01-05 21:19:38.504 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:19:38.740  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 21:19:49.975 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:19:50.207  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 21:20:01.302 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:20:01.564  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 21:21:19.291  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Application started. Press Ctrl+C to shut down. 
+2024-01-05 21:21:19.334  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Hosting environment: Development 
+2024-01-05 21:21:19.336  INFO Microsoft.Hosting.Lifetime.OnApplicationStarted [0]: Content root path: C:\Users\Henry-Pham\Documents\GitHub\dotNET_BaseProjectTemplate\BaseProjectTemplate\App.Web 
+2024-01-05 21:21:20.807 DEBUG App.Data.Repositories.GenericRepository.LogDebugQuery [76]: SELECT [a].[Description], [a].[Id], [a].[Name]
+FROM [AppCategory] AS [a]
+WHERE [a].[DeletedDate] IS NULL
+ORDER BY [a].[DisplayOrder] DESC, [a].[Id] DESC 
+2024-01-05 21:21:27.508  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category => 200 
+2024-01-05 21:44:16.342  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /Category/Delete/7 => 404 
+2024-01-05 21:44:16.781  INFO App.Web.WebConfig.Middlewares.AppLoggingMiddleware.MoveNext [0]: USER_ID: 1, USERNAME: admin; GET /error/404 => 404 

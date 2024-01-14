@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "b3fy2lQLNrnD/G0+cuC0H2ZXEU4zI/JcBg/w0VP9bCBJkfJ5pW2UKYlvlzJok/B135xkeFVPnZwzq6UC7p492g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Henry-Pham\\Documents\\GitHub\\dotNET_BaseProjectTemplate\\BaseProjectTemplate\\elFinder.NetCore\\elFinder.NetCore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Henry-Pham\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Henry-Pham\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Henry-Pham\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\Henry-Pham\\.nuget\\packages\\system.text.json\\4.7.0\\system.text.json.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
